@@ -16,7 +16,7 @@ object BraillCrypt {
 
   def decrypt(s:String) = println(s.map(_.toInt).map(fromBraille).mkString)
 
-  def crypt(s:String) = println(s.map(toBraille).map(_.toChar).mkString)
+  def crypt(s:String) = println(s.toUpperCase.map(toBraille).map(_.toChar).mkString)
 
   def main(av: Array[String]): Unit = av.toList match {
     case "-c" :: words => words foreach crypt
